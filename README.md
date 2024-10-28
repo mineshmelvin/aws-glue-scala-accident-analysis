@@ -8,22 +8,36 @@ The guide also provides insights into debugging and troubleshooting. It serves a
 in AWS Glue for efficient, robust, and scalable Data Processing applications.
 
 #### Contents
-1.	Setting up development environment in Windows
+1.	Setting up development environment in Windows 
+      
       a.	About winutils.exe
+      
       b.	Configuration
+      
       c.	IntelliJ IDEA IDE
+
       d.	Setting up AWS Credentials
 2. Developing a Scala Spark Application
+      
       a.	Blurb
+      
       b.	Data
+
       c.	Problem Statement
+
       d.	Solution
 3.	Deploying a Scala Spark Application on Glue
+      
       a.	Upload application jar on S3
+      
       b.	Prepare your account for AWS Glue
+      
       c.	Creating a AWS Glue job	
+      
       d.	Running the Glue job
+      
       e.	Monitoring the Glue job
+      
       f.	Debugging the Glue job
 
 #### 1.	Setting up development environment in Windows

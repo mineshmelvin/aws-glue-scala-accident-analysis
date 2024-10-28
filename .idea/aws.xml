@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="accountSettings">
-    <option name="activeProfile" value="profile:minesh" />
-    <option name="activeRegion" value="us-east-1" />
+    <option name="activeProfile" value="profile:avi-minesh-396976572761-DeveloperAccess" />
+    <option name="activeRegion" value="af-south-1" />
     <option name="recentlyUsedProfiles">
       <list>
+        <option value="profile:avi-minesh-396976572761-DeveloperAccess" />
+        <option value="profile:avi-user" />
+        <option value="profile:default" />
         <option value="profile:minesh" />
       </list>
     </option>
     <option name="recentlyUsedRegions">
       <list>
+        <option value="af-south-1" />
         <option value="us-east-1" />
       </list>
     </option>
   </component>
-  <component name="connectionManager">
-    <option name="activeConnectionId" value="AwsConnectionManagerConnection" />
-  </component>
   <component name="explorerToolWindow">
-    <option name="selectedTab" value="Explorer" />
+    <option name="selectedTab" value="Amazon Q + CodeWhisperer" />
   </component>
 </project>
