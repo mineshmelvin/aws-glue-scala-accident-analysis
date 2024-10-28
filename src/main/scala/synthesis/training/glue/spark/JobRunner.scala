@@ -6,7 +6,7 @@ import synthesis.training.glue.spark.DataTypes.{RawData, casualtyPerFactor, coll
 
 object JobRunner {
   //Create a Spark session
-  val spark: SparkSession = SparkSession.builder
+  implicit val spark: SparkSession = SparkSession.builder
     .master("local")
     .appName("Glue_Crash_Analysis")
     .getOrCreate()
@@ -18,8 +18,8 @@ object JobRunner {
 
     //Read data from Source
     val rawData: Dataset[RawData] = dataSource match {
-      case "s3" => DataTransfer.readFromS3(spark)
-      case "mysql" => DataTransfer.readFromMySQL(spark)
+      case "s3" => DataTransfer.readFromS3()
+      case "mysql" => DataTransfer.readFromMySQL()
       case _ => throw sys.error("Source not found/implemented yet")
     }
 
@@ -40,21 +40,12 @@ object JobRunner {
         writeToMySQL(processedData._3, "injuriesPerFactor")
         writeToMySQL(processedData._4, "casualtyPerFactor")
       case _ =>
-        println(processedData._1.show())
-        println(processedData._2.show())
-        println(processedData._3.show())
-        println(processedData._4.show())
+        println("Error processing data: " + processedData._1.show(3))
+        throw sys.error("Sink not found/implemented yet")
     }
-    //throw sys.error("Sink not found/implemented yet")
 
     //Stop the Spark session
     println("Job complete, stopping Spark")
     spark.stop()
   }
 }
-
-// Write a script to crawl sample data from a file and store it locally for unit test
-// Integrate with glue catalog (reading & write & generating scripts)
-// Push it to repo
-// Document how to set up environment
-// winutils for linux/mac

@@ -9,7 +9,7 @@ object DataTransfer {
    * @param spark, the SparkSession to use
    * @return RawData from S3 bucket
    */
-  def readFromS3(spark:SparkSession): Dataset[RawData] = {
+  def readFromS3()(implicit spark: SparkSession): Dataset[RawData] = {
     import spark.implicits._
     // Read the file from S3 into a DataFrame
     val ds = spark.read.schema(Encoders.product[RawData].schema).csv(s3InputUri).as[RawData]
@@ -22,7 +22,7 @@ object DataTransfer {
    * @param spark , the SparkSession to use
    * @return RawData from S3 bucket
    */
-  def readFromMySQL(spark:SparkSession):Dataset[RawData] = {
+  def readFromMySQL()(implicit spark: SparkSession):Dataset[RawData] = {
     import spark.implicits._
     val ds:Dataset[RawData] = spark.read.format("jdbc")
       .option("url", url)

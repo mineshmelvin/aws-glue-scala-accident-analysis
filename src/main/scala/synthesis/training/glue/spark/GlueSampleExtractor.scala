@@ -6,6 +6,7 @@ import synthesis.training.glue.spark.JobProperties.{s3InputUri, s3SampleOutputUr
 
 /**
  * Notes:
+ * This object can be used to extract sample data from the source file for testing program in development environment
  * Add <property name="dynamic.classpath" value="true"/> to <component name="PropertiesComponent"> in .idea/workspace.xml
  */
 
